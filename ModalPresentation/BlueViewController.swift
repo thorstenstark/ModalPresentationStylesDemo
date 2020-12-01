@@ -12,7 +12,6 @@ class BlueViewController: ColorfulViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         showButton.isHidden = true
-        view.backgroundColor = UIColor.systemBlue.withAlphaComponent(0.5)
+        view.backgroundColor = UIColor.systemBlue
     }
-
 }

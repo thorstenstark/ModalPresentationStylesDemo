@@ -12,6 +12,7 @@ class YellowViewController: ColorfulViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemYellow
+        showButton.isHidden = true
     }
 
     override func presentNewViewController() {

@@ -16,7 +16,9 @@ class OrangeViewController: ColorfulViewController {
 
     override func presentNewViewController() {
         let newViewController = YellowViewController()
-        newViewController.modalPresentationStyle = .currentContext
+
+        newViewController.modalPresentationStyle = .automatic
+
         present(newViewController, animated: true, completion: nil)
     }
 }

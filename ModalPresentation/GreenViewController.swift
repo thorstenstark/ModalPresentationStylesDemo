@@ -9,7 +9,7 @@ import UIKit
 
 class GreenViewController: ColorfulViewController {
 
-    var sideView: UIView = {
+    var miniView: UIView = {
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemIndigo
@@ -21,28 +21,56 @@ class GreenViewController: ColorfulViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGreen
-        setupSideView()
+        closeButton.isHidden = true
+//        setupMiniView()
     }
 
     override func presentNewViewController() {
         let newViewController = OrangeViewController()
-        newViewController.modalPresentationStyle = .formSheet
+
+        newViewController.modalPresentationStyle = .automatic
+
         present(newViewController, animated: true, completion: nil)
     }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 extension GreenViewController {
 
-    func setupSideView() {
-        view.addSubview(sideView)
-        sideView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
-        sideView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
-        sideView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapSideView)))
+    func setupMiniView() {
+        view.addSubview(miniView)
+        miniView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
+        miniView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+        miniView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapSideView)))
     }
 
     @objc func didTapSideView() {
         let newViewController = BlueViewController()
-        newViewController.modalPresentationStyle = .overFullScreen
+
+        newViewController.modalPresentationStyle = .automatic
+        
         present(newViewController, animated: true, completion: nil)
     }
 }
